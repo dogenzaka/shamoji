@@ -10,7 +10,7 @@ import (
 func TestWordCheckerDo(t *testing.T) {
 
 	Convey("Given target", t, func() {
-		_, err := ioutil.ReadFile("target.txt")
+		_, err := ioutil.ReadFile("target_test.txt")
 		So(err, ShouldBeNil)
 	})
 
