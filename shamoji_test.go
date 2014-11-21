@@ -3,15 +3,33 @@ package shamoji
 import (
 	"testing"
 
+	"github.com/tchap/go-patricia/patricia"
+	"golang.org/x/text/unicode/norm"
+
 	. "github.com/smartystreets/goconvey/convey"
-	"io/ioutil"
 )
 
-func TestWordCheckerDo(t *testing.T) {
+func TestNewWordChecker(t *testing.T) {
 
-	Convey("Given target", t, func() {
-		_, err := ioutil.ReadFile("target_test.txt")
-		So(err, ShouldBeNil)
+	Convey("Given form and words", t, func() {
+
+		form := norm.NFC
+		words := []string{
+			"神",
+		}
+
+		Convey("When non words", func() {
+			_, err := NewWordChecker(form, nil)
+
+			So(err, ShouldNotBeNil)
+		})
+
+		Convey("When new wrod checker", func() {
+			wc, err := NewWordChecker(form, words)
+
+			So(err, ShouldBeNil)
+			So(wc.Trie.Get(patricia.Prefix("神")), ShouldBeTrue)
+		})
 	})
 
 }

@@ -42,12 +42,13 @@ func generateTrie(form norm.Form, words []string) (trie *patricia.Trie) {
 		}(w)
 	}
 
+LOOP:
 	for {
 		select {
 		case b := <-wordChan:
 			trie.Set(b, true)
 		case <-finChan:
-			return
+			break LOOP
 		}
 	}
 	return
