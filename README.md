@@ -1,4 +1,6 @@
-shamoji
+shamoji(杓文字)
 =======
 
-Word Checker for Japanese
+[![Build Status](http://img.shields.io/travis/dogenzaka/shamoji.svg?style=flat)](https://travis-ci.org/dogenzaka/shamoji)
+[![Coverage](http://img.shields.io/codecov/c/github/dogenzaka/shamoji.svg?style=flat)](https://codecov.io/github/dogenzaka/shamoji)
+[![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://github.com/dogenzaka/gin-tools/blob/master/LICENSE)
