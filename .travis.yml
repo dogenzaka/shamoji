@@ -10,7 +10,7 @@ install:
   - go get github.com/mattn/gom
 
 script:
-  - gom install
+  - gom -test install
   - gom test -v -coverprofile=coverage.txt -covermode=count
 
 after_success:
