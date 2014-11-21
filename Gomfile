@@ -1,0 +1,8 @@
+gom 'github.com/ikawaha/kagome'
+gom 'github.com/tchap/go-patricia/patricia'
+gom 'golang.org/x/text/unicode/norm'
+
+group :test do
+    gom 'github.com/smartystreets/goconvey'
+    gom 'code.google.com/p/go.tools/cmd/cover'
+end
